@@ -4,7 +4,7 @@
 * General:
     - Returns Token and user type.
 
-* Request Sample: ``` curl http://hikamoru.pythonanywhere.com/dj-rest-auth/registration/ -X POST -H "Content-Type: application/json" -d
+* Request Sample: ``` curl /dj-rest-auth/registration/ -X POST -H "Content-Type: application/json" -d
             '{
                 "username": "name",
                 "password1":"Aa123456789",
@@ -24,7 +24,7 @@
 #### POST /dj-rest-auth/login/
 * General:
     - Returns Token and user type.
-* Request Sample: ``` curl http://hikamoru.pythonanywhere.com/dj-rest-auth/login/ -X POST -H "Content-Type: application/json" -d
+* Request Sample: ``` curl /dj-rest-auth/login/ -X POST -H "Content-Type: application/json" -d
             '{
             "username": "name",
             "password":"Aa123456789"
@@ -41,7 +41,7 @@
 #### GET /most-recent-exam/
 * General:
     - Returns the most recent exam id for the logged in examiner.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/most-recent-exam/ -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>"
+* Request Sample: ```curl /most-recent-exam/ -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>"
         ```
 * Response Sample:
 ```sh
@@ -52,7 +52,7 @@
 #### POST /exam/
 * General:
     - Returns exam data.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/ -X POST -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>" -d
+* Request Sample: ```curl /exam/ -X POST -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>" -d
             '{
             "exam_name":"Exam 1",
             "exam_startdate":"2021-05-27 02:25:33+02:00",
@@ -72,7 +72,7 @@
 #### GET /exam/
 * General:
     - Returns exam list for the logged in examiner.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/ -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>"```
+* Request Sample: ```curl /exam/ -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>"```
 * Response Sample:
 ```sh
 {
@@ -88,7 +88,7 @@
 #### GET /exam/{exam_id}/
 * General:
     - Returns a whole exam.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/{exam_id}/ -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>"```
+* Request Sample: ```curl /exam/{exam_id}/ -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>"```
 * Response Sample:
 ```sh
 {
@@ -172,7 +172,7 @@
 #### PATCH /exam/{exam_id}/
 * General:
     - Returns 200 ok.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/{exam_id}/ -X PATCH -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>"
+* Request Sample: ```curl /exam/{exam_id}/ -X PATCH -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>"
 '{
     "id": 13,
     "exam": "Movies",
@@ -186,7 +186,7 @@ HTTP 200 OK
 #### Delete /exam/{exam_id}/
 * General:
     - Returns 200 ok.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/{exam_id}/ -X Delete -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>"```
+* Request Sample: ```curl /exam/{exam_id}/ -X Delete -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>"```
 * Response Sample:
 ```sh
 HTTP 200 OK
@@ -194,7 +194,7 @@ HTTP 200 OK
 #### POST /exam/{exam_id}/question/
 * General:
     - Returns the question that has been added.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/{exam_id}/question/ -X POST -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>" -d
+* Request Sample: ```curl /exam/{exam_id}/question/ -X POST -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>" -d
             '{
             "text": "how old are you now wrong ?",
             "mark": 100
@@ -213,7 +213,7 @@ HTTP 200 OK
 #### PATCH /exam/{exam_id}/question/{question_id}/
 * General:
     - Returns 200 ok.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/{exam_id}/question/{question_id}/ -X PATCH -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>" -d
+* Request Sample: ```curl /exam/{exam_id}/question/{question_id}/ -X PATCH -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>" -d
             '{
     "id": 157,
     "text": "what was Sophie Turner's name in game of thrones ? edited question",
@@ -227,7 +227,7 @@ HTTP 200 OK
 #### DELETE /exam/{exam_id}/question/{question_id}/
 * General:
     - Returns 200 ok.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/{exam_id}/question/{question_id}/ -X DELETE -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>" ```
+* Request Sample: ```curl /exam/{exam_id}/question/{question_id}/ -X DELETE -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>" ```
 * Response Sample:
 ```sh
 200 OK
@@ -235,7 +235,7 @@ HTTP 200 OK
 #### POST /exam/question/{question_id}/answer/
 * General:
     - Returns the answer that has been added.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/question/{question_id}/answer/ -X POST -H "Content-Type: application/json" -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>" -d
+* Request Sample: ```curl /exam/question/{question_id}/answer/ -X POST -H "Content-Type: application/json" -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>" -d
             '{
             "text":"15",
             "is_correct":true
@@ -253,7 +253,7 @@ HTTP 200 OK
 #### PATCH /exam/question/{question_id}/answer/{answer_id}/
 * General:
     - Returns 200 OK.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/question/{question_id}/answer/{answer_id}/ -X PATCH -H "Content-Type: application/json" -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>" -d
+* Request Sample: ```curl /exam/question/{question_id}/answer/{answer_id}/ -X PATCH -H "Content-Type: application/json" -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>" -d
             '{
     "text": "Sansa Snow new",
     "is_correct": false
@@ -266,7 +266,7 @@ HTTP 200 OK
 #### DELETE /exam/question/{question_id}/answer/{answer_id}/
 * General:
     - Returns 200 OK.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/question/{question_id}/answer/{answer_id}/ -X DELETE -H "Content-Type: application/json" -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>" -d ```
+* Request Sample: ```curl /exam/question/{question_id}/answer/{answer_id}/ -X DELETE -H "Content-Type: application/json" -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>" -d ```
 * Response Sample:
 ```sh
 200 OK
@@ -274,7 +274,7 @@ HTTP 200 OK
 #### POST exam/{exam_id}/allowed-students/
 * General:
     - Returns list of students that has been added.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/{exam_id}/allowed-students/ -X POST -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>" -d
+* Request Sample: ```curl /exam/{exam_id}/allowed-students/ -X POST -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>" -d
             '{
                 "students":["student1","student2"]
             }' 
@@ -293,7 +293,7 @@ HTTP 200 OK
 #### GET exam/{exam_id}/allowed-students/
 * General:
     - Returns list of students allowed to enter the exam.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/{exam_id}/allowed-students/ -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>"
+* Request Sample: ```curl /exam/{exam_id}/allowed-students/ -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>"
         ```
 * Response Sample:
 ```sh
@@ -326,7 +326,7 @@ HTTP 200 OK
 #### DELETE exam/{exam_id}/allowed-students/{student_id}/
 * General:
     - Delete allowed student to enter the exam.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/{exam_id}/allowed-students/{student_id}/ -x DELETE -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>"
+* Request Sample: ```curl /exam/{exam_id}/allowed-students/{student_id}/ -x DELETE -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>"
         ```
 * Response Sample:
 ```sh
@@ -335,7 +335,7 @@ HTTP 200 OK
 #### GET exam/{exam_id}/supervisors/
 * General:
     - Retruns list of supervisors for the exam.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/{exam_id}/supervisors/ -X GET -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>" -d```
+* Request Sample: ```curl /exam/{exam_id}/supervisors/ -X GET -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>" -d```
 * Response Sample:
 ```sh
 [
@@ -361,7 +361,7 @@ HTTP 200 OK
 #### GET exam/{exam_id}/statistics/
 * General:
     - Retruns statistics for a single exam and its questions.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/{exam_id}/statistics/ -X GET -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>" -d```
+* Request Sample: ```curl /exam/{exam_id}/statistics/ -X GET -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>" -d```
 * Response Sample:
 ```sh
 [
@@ -400,7 +400,7 @@ HTTP 200 OK
 #### POST exam/{exam_id}/supervisors/
 * General:
     - adds supervisors to exam.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/{exam_id}/supervisors/ -X POST -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>" -d
+* Request Sample: ```curl /exam/{exam_id}/supervisors/ -X POST -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>" -d
         '{
                 "supervisor": [
                     "super1",
@@ -416,7 +416,7 @@ HTTP 200 OK
 #### DELETE exam/{exam_id}/supervisor/{supervisor_id}/
 * General:
     - delete assigned supervisor to exam.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/{exam_id}/supervisor/{supervisor_id}/ -X DELETE -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>" 
+* Request Sample: ```curl /exam/{exam_id}/supervisor/{supervisor_id}/ -X DELETE -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>" 
         ```
 * Response Sample:
 ```sh
@@ -425,7 +425,7 @@ HTTP 200 OK
 #### GET /exam/{exam_id}/attendance/
 * General:
     - Returns list of students allowed to enter the exam.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/{exam_id}/attendance/ -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>"
+* Request Sample: ```curl /exam/{exam_id}/attendance/ -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>"
         ```
 * Response Sample:
 ```sh
@@ -453,7 +453,7 @@ HTTP 200 OK
 #### GET /exam/{exam_id}/marks/
 * General:
     - Returns list of students marks in exam.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/{exam_id}/marks/ -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>"
+* Request Sample: ```curl /exam/{exam_id}/marks/ -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>"
         ```
 * Response Sample:
 ```sh
@@ -473,7 +473,7 @@ HTTP 200 OK
 #### GET /exam/{exam_id}/violations/
 * General:
     - Returns list of students marks in exam.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/{exam_id}/violations/ -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>"
+* Request Sample: ```curl /exam/{exam_id}/violations/ -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>"
         ```
 * Response Sample:
 ```sh
@@ -501,7 +501,7 @@ HTTP 200 OK
 #### GET /exam/{exam_id}/student/{student_id}/
 * General:
     - Returns the exam of the student.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/{exam_id}/student/{student_id}/  -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>"
+* Request Sample: ```curl /exam/{exam_id}/student/{student_id}/  -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>"
         ```
 * Response Sample:
 ```sh
@@ -544,7 +544,7 @@ HTTP 200 OK
 #### GET /exam/{exam_id}/time-left/
 * General:
     - Returns time left for the exam.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/{exam_id}/time-left/ -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>"
+* Request Sample: ```curl /exam/{exam_id}/time-left/ -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>"
         ```
 * Response Sample:
 ```sh
@@ -557,7 +557,7 @@ HTTP 200 OK
 #### POST /programming-test/
 * General:
     - Returns the data of the added programming test.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/programming-test/ -X POST -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>" -d
+* Request Sample: ```curl /programming-test/ -X POST -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>" -d
             '{
             "test_name":"programming test - python ",
             "test_startdate":"2021-09-27 02:25:33+02:00",
@@ -579,7 +579,7 @@ HTTP 200 OK
 #### GET /programming-test/
 * General:
     - Returns lists of programming tests for the logged in examiner.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/programming-test/ -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>"```
+* Request Sample: ```curl /programming-test/ -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>"```
 * Response Sample:
 ```sh
 [
@@ -604,7 +604,7 @@ HTTP 200 OK
 #### GET /programming-test/{test_id}/
 * General:
     - Returns a whole test.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/programming-test/{test_id}/ -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>"```
+* Request Sample: ```curl /programming-test/{test_id}/ -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>"```
 * Response Sample:
 ```sh
 {
@@ -628,7 +628,7 @@ HTTP 200 OK
 #### POST /programming-test/{test_id}/question/
 * General:
     - Returns the question that has been added.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/programming-test/{tes_id}/question/ -X POST -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>" -d
+* Request Sample: ```curl /programming-test/{tes_id}/question/ -X POST -H "Content-Type: application/json"  "Authorization: Token <ACCESS_TOKEN>" -d
             '{ "text" : "write a python fuction that takes an int list as an argument and returns the sum of it elements , list_sum(numbers)  , call it 2 time for (30 60 5 7 95 21) ( 4 51 -25 96 -74 60) " }' 
         ```
 * Response Sample:
@@ -644,7 +644,7 @@ HTTP 200 OK
 #### POST /programming-test/{test_id}/allowed-students/
 * General:
     - Returns 201 or 400
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/programming-test/{test_id}/allowed-students/ -X POST -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>" -d
+* Request Sample: ```curl /programming-test/{test_id}/allowed-students/ -X POST -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>" -d
             '{
                 "students":["student1","student2"]
             }' 
@@ -663,7 +663,7 @@ HTTP 200 OK
 #### GET programming-test/{test_id}/allowed-students/
 * General:
     - Returns list of students allowed to enter the exam.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/programming-test/{test_id}/allowed-students/ -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>"
+* Request Sample: ```curl /programming-test/{test_id}/allowed-students/ -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>"
         ```
 * Response Sample:
 ```sh
@@ -680,7 +680,7 @@ HTTP 200 OK
 #### GET /programming-test/{test_id}/student/{student_id}/
 * General:
     - Returns the test answers of the student.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/programming-test/{test_id}/student/{student_id}/  -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>"
+* Request Sample: ```curl /programming-test/{test_id}/student/{student_id}/  -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>"
         ```
 * Response Sample:
 ```sh
@@ -713,7 +713,7 @@ HTTP 200 OK
 #### GET student/dashboard/
 * General:
     - Returns all exams for the logged in student.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/student/dashboard/ -H "Authorization: Token <ACCESS_TOKEN>" ```
+* Request Sample: ```curl /student/dashboard/ -H "Authorization: Token <ACCESS_TOKEN>" ```
 * Response Sample:
 ```sh
 [
@@ -751,7 +751,7 @@ HTTP 200 OK
 #### GET /exam/{exam_id}/start/
 * General:
     - Returns the whole exam for the student.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/{exam_id}/start/ -H "Authorization: Token <ACCESS_TOKEN>" ```
+* Request Sample: ```curl /exam/{exam_id}/start/ -H "Authorization: Token <ACCESS_TOKEN>" ```
 * Response Sample:
 ```sh
 {
@@ -778,7 +778,7 @@ HTTP 200 OK
 #### POST /exam/{exam_id}/submit/
 * General:
     - Submits all exam answers for the student.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/{exam_id}/submit/ -X POST -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>" -d
+* Request Sample: ```curl /exam/{exam_id}/submit/ -X POST -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>" -d
             '{
     "student_answers":
     {
@@ -801,7 +801,7 @@ HTTP 200 OK
 #### GET student/dashboard/programming-tests/
 * General:
     - Returns all programming tests for the logged in student.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/student/dashboard/programming-tests/ -H "Authorization: Token <ACCESS_TOKEN>" ```
+* Request Sample: ```curl /student/dashboard/programming-tests/ -H "Authorization: Token <ACCESS_TOKEN>" ```
 * Response Sample:
 ```sh
 [
@@ -823,7 +823,7 @@ HTTP 200 OK
 #### GET /programming-test/{test_id}/start/
 * General:
     - Returns the whole exam for the student.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/programming-test/{test_id}/start/ -H "Authorization: Token <ACCESS_TOKEN>" ```
+* Request Sample: ```curl /programming-test/{test_id}/start/ -H "Authorization: Token <ACCESS_TOKEN>" ```
 * Response Sample:
 ```sh
 {
@@ -838,7 +838,7 @@ HTTP 200 OK
 #### POST /programming-test/{test_id}/submit/
 * General:
     - Submits all exam answers for the student.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/programming-test/{test_id}/submit/ -X POST -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>" -d
+* Request Sample: ```curl /programming-test/{test_id}/submit/ -X POST -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>" -d
             '{
     {
     "student_answers"
@@ -861,7 +861,7 @@ HTTP 200 OK
 #### GET supervisor/dashboard/
 * General:
     - Returns list of exams for the logged in supervisor.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/supervisor/dashboard/ -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>"
+* Request Sample: ```curl /supervisor/dashboard/ -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>"
         ```
 * Response Sample:
 ```sh
@@ -878,7 +878,7 @@ HTTP 200 OK
 #### GET exam/{exam_id}/supervise/
 * General:
     - Returns some exam details and assigned students to supervise.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/{exam_id}/supervise/ -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>"
+* Request Sample: ```curl /exam/{exam_id}/supervise/ -H "Content-Type: application/json" "Authorization: Token <ACCESS_TOKEN>"
         ```
 * Response Sample:
 ```sh
@@ -906,7 +906,7 @@ HTTP 200 OK
 #### POST exam/{exam_id}/supervise/student/{student_id}/
 * General:
     -Assigned supervisor can reports a violation.
-* Request Sample: ```curl http://hikamoru.pythonanywhere.com/exam/{exam_id}/supervise/student/{student_id}/ -H "Authorization: Token <ACCESS_TOKEN>" ```
+* Request Sample: ```curl /exam/{exam_id}/supervise/student/{student_id}/ -H "Authorization: Token <ACCESS_TOKEN>" ```
 * Response Sample:
 ```sh
 {
