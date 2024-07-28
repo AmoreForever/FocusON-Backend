@@ -1,4 +1,4 @@
-![https://hikamoru.ru/assets/focus.png](asdasd)
+![](https://hikamoru.ru/assets/focus.png)
 
 
 # FocusON - Ultimate Automation of Exams
